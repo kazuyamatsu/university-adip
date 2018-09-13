@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <limits.h>
+/*
+double potenzieren(double basis, int exponent) {
+
+ int i;
+ double erg = 1;
+ int schrittzaehler=0;
+ for(i=exponent; i > 0; i--) {
+     erg = erg * basis;
+  schrittzaehler++;
+ }
+ printf("Benoetigte Schritte zur Berechnung:  %i.\n",schrittzaehler);
+ return erg;
+}
+*/
+
+double potenzieren(double basis, int exponent) {
+
+ int i;
+ double erg = 1;
+ int schrittzaehler=0;
+
+ for(i=1; i <= (exponent/2); i++) {
+     erg = basis * basis * erg;
+     schrittzaehler++;
+ }
+ if(exponent % 2 != 0) erg = erg * basis;
+ printf("Benoetigte Schritte zur Berechnung:  %i.\n",schrittzaehler);
+ return erg;
+}
+
+
+int main() {
+ char x1 = 70,x2 = 100,result;
+ result = x1 + x2;
+ printf("%hi,\n%hi,\n%hi",x1,x2,result);
+ double basis;
+ int exponent;
+
+ puts("\nDieses Programm berechnet die Potenz einer Zahl: b^e");
+ puts("b ist eine reelle Zahl und e ist eine Natuerliche Zahl (inklusive 0).\n");
+
+
+ printf("Gebe Basis an mit Dezimalpunkt: ");
+ scanf("%lf[/n]",&basis);
+
+ while(1) {
+  printf("Gebe Exponent an: ");
+  scanf("%i[\n]",&exponent);
+  if(exponent < 0) {
+	puts("Der Exponent ist keine Natuerliche Zahl");
+	continue;
+  }
+  else break;
+ }
+
+ printf("%lf^%i = %lf\n",basis,exponent,potenzieren(basis,exponent));
+}

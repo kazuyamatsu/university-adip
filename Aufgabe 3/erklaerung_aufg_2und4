@@ -1,0 +1,15 @@
+Aufgabe 2:
+
+ a) untprog1 kopiert den Bitstring der im Speicher der Variable z liegt.
+ c) 3: 00000000.00000000.00000000.00000011
+    8: 00000000.00000000.00000000.00001000
+   42: 00000000.00000000.00000000.00101010
+
+Aufgabe 4:
+ d) 
+    14 defizient.
+    18 weder noch.
+    25 defizient.
+    28 vollkommen.
+ 
+    r = 499: Anzahl = 374
